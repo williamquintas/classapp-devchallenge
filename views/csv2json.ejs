@@ -2,16 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CSV to JSON</title>
     <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <h1>CSV to JSON</h1>
-    <form action="upload" method="post" enctype="multipart/form-data">
-      <center><label for="csv">Upload the CSV file:</label>
-      <input type="file" name="csv" accept=".csv" required /></center>
-      <button type="submit">Convert to JSON</button>
-    </form>
-    <textarea id="json" rows="15" cols="80"><%=json%></textarea>
+    <div class="container">
+      <h1>CSV to JSON</h1>
+      <form action="upload" method="post" enctype="multipart/form-data">
+        <label for="csv">Upload the CSV file:</label>
+        <div class="input-group">
+          <input type="file" class="form-control" name="csv" accept=".csv" required />
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-success">Convert to JSON</button>
+            </span>
+        </div><!-- /input-group -->
+      </form>
+      <textarea id="json" rows="15" cols="80" class="form-control"><%=json%></textarea>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- Minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>
