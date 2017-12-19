@@ -99,24 +99,26 @@ module.exports = function csvJSON(csv){
       person.eid = result[i].eid;
       //Treatment for classes
       var classes = [];
-      result[i].class.forEach(function(thisArg) {
-        //Classes saparated with ,
-        if (thisArg.search(',') !== -1) {
-          var items = thisArg.split(',');
-          items.forEach(function(thisArg) {
+      if (result[i].class !== undefined) {
+        result[i].class.forEach(function(thisArg) {
+          //Classes saparated with ,
+          if (thisArg.search(',') !== -1) {
+            var items = thisArg.split(',');
+            items.forEach(function(thisArg) {
+              classes.push(thisArg.trim());
+            })
+          //Classes saparated with /
+          } else if (thisArg.search('/') !== -1) {
+            var items = thisArg.split('/');
+            items.forEach(function(thisArg) {
+              classes.push(thisArg.trim());
+            })
+          //Just one class
+          } else {
             classes.push(thisArg.trim());
-          })
-        //Classes saparated with /
-        } else if (thisArg.search('/') !== -1) {
-          var items = thisArg.split('/');
-          items.forEach(function(thisArg) {
-            classes.push(thisArg.trim());
-          })
-        //Just one class
-        } else {
-          classes.push(thisArg.trim());
-        }
-      });
+          }
+        });
+      }
       //Saves the classes
       person.classes = classes;
       //Need not save the classes as an array when there is only one class
@@ -552,7 +554,7 @@ module.exports = function csvJSON(csv){
       }
     }
   }
-  console.log(JSON.stringify(json)); //JSON
+  return JSON.stringify(json, null, 2).trim(); //JSON
 
 }
 
