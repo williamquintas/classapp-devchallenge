@@ -7,8 +7,7 @@
     "start": "node app.js"
   },
   "keywords": [
-    "csv",
-    "json"
+    "csv"
   ],
   "author": "Melo, William",
   "license": "ISC",
