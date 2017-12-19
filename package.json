@@ -1,0 +1,19 @@
+{
+  "name": "classapp",
+  "version": "1.0.0",
+  "description": "Convert csv to json",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "csv",
+    "json"
+  ],
+  "author": "Melo, William",
+  "license": "ISC",
+  "dependencies": {
+    "google-libphonenumber": "^3.0.9",
+    "validator": "^9.2.0"
+  }
+}
